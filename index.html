@@ -1025,10 +1025,14 @@
                 <div class="quejas-form">
                     <h3>Ayúdanos a mejorar</h3>
                     <p class="quejas-desc">Tu experiencia es lo más importante para nosotros. Este formulario es <strong style="color:var(--yellow);">100% anónimo</strong>. Queremos escucharte sin que te preocupes por nada.</p>
-                    <form id="quejasForm">
+                    <form action="https://formsubmit.co/lesliefgym@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nueva queja/sugerencia anónima - Star Fit GYM">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://leslieflores95-byte.github.io/starfit-gym/#quejas">
                         <div class="form-group">
                             <label>Tipo</label>
-                            <select required>
+                            <select name="Tipo" required>
                                 <option value="" disabled selected>Selecciona una opción</option>
                                 <option value="Queja">Queja</option>
                                 <option value="Sugerencia">Sugerencia</option>
@@ -1037,7 +1041,7 @@
                         </div>
                         <div class="form-group">
                             <label>Mensaje</label>
-                            <textarea placeholder="Cuéntanos los detalles..." required></textarea>
+                            <textarea name="Mensaje" placeholder="Cuéntanos los detalles..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar 📩</button>
                     </form>
@@ -1112,14 +1116,7 @@
             window.open(`https://wa.me/51977979159?text=${encodeURIComponent(text)}`, '_blank');
         });
 
-        // Quejas form submit to WhatsApp (anónimo)
-        document.getElementById('quejasForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const tipo = this.querySelector('select').value;
-            const msg = this.querySelector('textarea').value;
-            const text = `[${tipo} Anónima] ${msg}`;
-            window.open(`https://wa.me/51977979159?text=${encodeURIComponent(text)}`, '_blank');
-        });
+
     </script>
 </body>
 </html>
