@@ -1024,12 +1024,8 @@
             <div class="quejas-wrapper fade-in">
                 <div class="quejas-form">
                     <h3>Ayúdanos a mejorar</h3>
-                    <p class="quejas-desc">Tu experiencia es lo más importante para nosotros. Si tienes alguna queja, sugerencia o comentario, escríbenos y lo resolveremos lo antes posible.</p>
+                    <p class="quejas-desc">Tu experiencia es lo más importante para nosotros. Este formulario es <strong style="color:var(--yellow);">100% anónimo</strong>. Queremos escucharte sin que te preocupes por nada.</p>
                     <form id="quejasForm">
-                        <div class="form-group">
-                            <label>Nombre</label>
-                            <input type="text" placeholder="Tu nombre" required>
-                        </div>
                         <div class="form-group">
                             <label>Tipo</label>
                             <select required>
@@ -1116,13 +1112,12 @@
             window.open(`https://wa.me/51977979159?text=${encodeURIComponent(text)}`, '_blank');
         });
 
-        // Quejas form submit to WhatsApp
+        // Quejas form submit to WhatsApp (anónimo)
         document.getElementById('quejasForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = this.querySelector('input[type="text"]').value;
             const tipo = this.querySelector('select').value;
             const msg = this.querySelector('textarea').value;
-            const text = `[${tipo}] Hola Star Fit GYM, soy ${name}. ${msg}`;
+            const text = `[${tipo} Anónima] ${msg}`;
             window.open(`https://wa.me/51977979159?text=${encodeURIComponent(text)}`, '_blank');
         });
     </script>
