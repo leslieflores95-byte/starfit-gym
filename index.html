@@ -618,6 +618,54 @@
             box-shadow: 0 8px 35px rgba(37,211,102,0.6);
         }
 
+        /* ===== QUEJAS Y SUGERENCIAS ===== */
+        #quejas {
+            background: linear-gradient(180deg, var(--black) 0%, var(--gray) 100%);
+        }
+        .quejas-wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .quejas-form {
+            background: var(--gray);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .quejas-form h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .quejas-form .quejas-desc {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .quejas-form .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+            appearance: none;
+            cursor: pointer;
+        }
+        .quejas-form .form-group select:focus {
+            outline: none;
+            border-color: var(--red);
+        }
+        .quejas-form .form-group select option {
+            background: var(--gray);
+            color: var(--white);
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             background: var(--gray);
@@ -965,6 +1013,43 @@
         </div>
     </section>
 
+    <!-- ===== QUEJAS Y SUGERENCIAS ===== -->
+    <section id="quejas">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Tu opinión importa</span>
+                <h2 class="section-title">QUEJAS Y <span class="highlight">SUGERENCIAS</span></h2>
+                <div class="divider"></div>
+            </div>
+            <div class="quejas-wrapper fade-in">
+                <div class="quejas-form">
+                    <h3>Ayúdanos a mejorar</h3>
+                    <p class="quejas-desc">Tu experiencia es lo más importante para nosotros. Si tienes alguna queja, sugerencia o comentario, escríbenos y lo resolveremos lo antes posible.</p>
+                    <form id="quejasForm">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo</label>
+                            <select required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="Queja">Queja</option>
+                                <option value="Sugerencia">Sugerencia</option>
+                                <option value="Comentario">Comentario</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea placeholder="Cuéntanos los detalles..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar 📩</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
@@ -1028,6 +1113,16 @@
             const phone = this.querySelector('input[type="tel"]').value;
             const msg = this.querySelector('textarea').value;
             const text = `Hola Star Fit GYM! Soy ${name} (${phone}). ${msg}`;
+            window.open(`https://wa.me/51977979159?text=${encodeURIComponent(text)}`, '_blank');
+        });
+
+        // Quejas form submit to WhatsApp
+        document.getElementById('quejasForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.querySelector('input[type="text"]').value;
+            const tipo = this.querySelector('select').value;
+            const msg = this.querySelector('textarea').value;
+            const text = `[${tipo}] Hola Star Fit GYM, soy ${name}. ${msg}`;
             window.open(`https://wa.me/51977979159?text=${encodeURIComponent(text)}`, '_blank');
         });
     </script>
