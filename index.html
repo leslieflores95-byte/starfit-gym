@@ -52,13 +52,25 @@
             align-items: center;
         }
         .logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
         }
-        .logo span:first-child { color: var(--yellow); }
-        .logo span:nth-child(2) { color: var(--white); }
-        .logo span:last-child { color: var(--red); }
+        .logo-img {
+            height: 55px;
+            width: auto;
+            border-radius: 8px;
+        }
+        .hero-logo {
+            width: 200px;
+            height: auto;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            animation: fadeInDown 1s ease;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a {
             font-weight: 600;
@@ -680,13 +692,14 @@
             gap: 20px;
         }
         .footer-logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
         }
-        .footer-logo span:first-child { color: var(--yellow); }
-        .footer-logo span:nth-child(2) { color: var(--white); }
-        .footer-logo span:last-child { color: var(--red); }
+        .footer-logo-img {
+            height: 60px;
+            width: auto;
+            border-radius: 8px;
+        }
         .footer p {
             color: var(--light-gray);
             font-size: 0.8rem;
@@ -779,7 +792,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="#inicio" class="logo">
-                <span>STAR </span><span>FIT </span><span>GYM</span>
+                <img src="logo-starfit.jpeg" alt="Star Fit GYM" class="logo-img">
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#inicio">Inicio</a>
@@ -799,6 +812,7 @@
     <!-- ===== HERO ===== -->
     <section class="hero" id="inicio">
         <div class="hero-content">
+            <img src="logo-starfit.jpeg" alt="Star Fit GYM" class="hero-logo">
             <div class="hero-badge">💪 Villa María del Triunfo</div>
             <h1>TU MEJOR<br><span class="highlight">VERSIÓN</span><br>EMPIEZA AQUÍ</h1>
             <p>Entrena con intensidad en Star Fit GYM. Equipamiento completo, ambiente motivador y planes accesibles para todos los niveles.</p>
@@ -1064,7 +1078,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <span>STAR </span><span>FIT </span><span>GYM</span>
+                    <img src="logo-starfit.jpeg" alt="Star Fit GYM" class="footer-logo-img">
                 </div>
                 <div class="footer-links">
                     <a href="#inicio">Inicio</a>
