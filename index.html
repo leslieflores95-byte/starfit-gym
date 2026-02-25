@@ -630,6 +630,72 @@
             box-shadow: 0 8px 35px rgba(37,211,102,0.6);
         }
 
+        /* ===== TESTIMONIOS ===== */
+        #testimonios {
+            background: var(--gray);
+        }
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .testimonio-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 35px 30px;
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .testimonio-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+        }
+        .testimonio-stars {
+            color: var(--yellow);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+        .testimonio-text {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .testimonio-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonio-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: var(--black);
+        }
+        .testimonio-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .testimonio-time {
+            font-size: 0.75rem;
+            color: var(--light-gray);
+            margin-top: 3px;
+        }
+        @media (max-width: 768px) {
+            .testimonios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ===== QUEJAS Y SUGERENCIAS ===== */
         #quejas {
             background: linear-gradient(180deg, var(--black) 0%, var(--gray) 100%);
@@ -799,6 +865,7 @@
                 <a href="#horarios">Horarios</a>
                 <a href="#planes">Planes</a>
                 <a href="#promociones">Promos</a>
+                <a href="#testimonios">Testimonios</a>
                 <a href="#contacto">Contacto</a>
                 <a href="#quejas">Quejas</a>
                 <a href="https://wa.me/51977979159?text=Hola%20Star%20Fit%20GYM!%20Quiero%20información" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.75rem;">Únete Ya</a>
@@ -962,6 +1029,52 @@
         </div>
     </section>
 
+    <!-- ===== TESTIMONIOS ===== -->
+    <section id="testimonios">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Resultados reales</span>
+                <h2 class="section-title">LO QUE DICEN <span class="highlight">NUESTROS MIEMBROS</span></h2>
+                <div class="divider"></div>
+            </div>
+            <div class="testimonios-grid fade-in">
+                <div class="testimonio-card">
+                    <div class="testimonio-stars">★★★★★</div>
+                    <p class="testimonio-text">"Llevo 6 meses entrenando aquí y el cambio ha sido increíble. Las máquinas están en muy buen estado y siempre encuentras peso libre disponible. El ambiente te motiva a dar más."</p>
+                    <div class="testimonio-author">
+                        <div class="testimonio-avatar">C</div>
+                        <div>
+                            <div class="testimonio-name">Carlos M.</div>
+                            <div class="testimonio-time">Miembro hace 6 meses</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-stars">★★★★★</div>
+                    <p class="testimonio-text">"Al principio me daba vergüenza ir al gimnasio, pero en Star Fit todos son buena onda. Tienen todo lo que necesitas para entrenar bien: mancuernas, barras, poleas. Muy completo."</p>
+                    <div class="testimonio-author">
+                        <div class="testimonio-avatar">M</div>
+                        <div>
+                            <div class="testimonio-name">María L.</div>
+                            <div class="testimonio-time">Miembro hace 4 meses</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-stars">★★★★★</div>
+                    <p class="testimonio-text">"El mejor gimnasio de la zona sin duda. Buenas máquinas, buen precio y el horario es perfecto para los que trabajamos. Se nota que le ponen dedicación al gym."</p>
+                    <div class="testimonio-author">
+                        <div class="testimonio-avatar">J</div>
+                        <div>
+                            <div class="testimonio-name">Jorge R.</div>
+                            <div class="testimonio-time">Miembro hace 1 año</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== CONTACTO ===== -->
     <section id="contacto">
         <div class="container">
@@ -1085,6 +1198,7 @@
                     <a href="#horarios">Horarios</a>
                     <a href="#planes">Planes</a>
                     <a href="#promociones">Promos</a>
+                    <a href="#testimonios">Testimonios</a>
                     <a href="#contacto">Contacto</a>
                     <a href="#quejas">Quejas</a>
                     <a href="https://www.facebook.com/profile.php?id=61560516351225&mibextid=ZbWKwL" target="_blank">Facebook</a>
